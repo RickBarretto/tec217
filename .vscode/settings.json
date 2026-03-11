@@ -1,0 +1,9 @@
+{
+    "octave.alwaysUseAbsolutePaths": true,
+    "octave.clearPreviousOutput": true,
+    "octave.octaveLocation": "${env:USERPROFILE}\\AppData\\Local\\Programs\\GNU Octave\\Octave-11.1.0\\mingw64\\bin\\octave-cli.exe",
+
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:USERPROFILE}\\AppData\\Local\\Programs\\GNU Octave\\Octave-11.1.0\\mingw64\\bin"
+    }
+}
