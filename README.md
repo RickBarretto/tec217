@@ -12,4 +12,4 @@ But you could also run from Matlab or Octave directly.
 
 ### Cycle I: Introduction to Computational Methods
 
-- (W1 - 2026/03/10) [Implementation Exercise with Matlab/Octave!](./exercises/exercise_1/)
+- (W1 - 2026/03/10) [Implementation Exercise with Matlab/Octave!](./exercises/cycle_1/week_1/)
