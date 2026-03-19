@@ -6,3 +6,16 @@ f_relacao = @(x) (2 * sin(x/2).^2) ./ (x.^2);
 x = 1e-5;
 f_direta(x)
 f_relacao(x)
+
+
+# c)
+
+format long
+
+x = 1e-6;
+
+f1 = (1 - cos(x)) / (x^2);
+f2 = (2 * sin(x/2)^2) / (x^2);
+
+f1
+f2
