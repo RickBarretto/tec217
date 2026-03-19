@@ -1,4 +1,4 @@
-# Exercício 5 - Considerando SPF(10, 5, -3, 3), de base 2,
+# Exercício 5 - Considerando SPF(10, 5, -3, 3),
 # indentifique as regiões de underflow e overflow.
 
 beta = 10;
