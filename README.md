@@ -12,6 +12,6 @@ But you could also run from Matlab or Octave directly.
 
 ### Cycle I: Introduction to Computational Methods
 
-- (W1 - 2026/03/10) [Implementation Exercise with Matlab/Octave!](./exercises/2026_03_10/)
-- (W2 - 2026/03/17) [Aproximações e Erros](./exercises/2026_03_17/)
-- (W3 - 2026/03/24) [Zeros de Função - Métodos de Quebra](./exercises/2026_03_24/)
+- [Implementation Exercise with Matlab/Octave!](./exercises/2026_03_10/) March, 10th
+- [Errors and Approximations](./exercises/2026_03_17/) March, 17th
+- [Function's Zeroes - Breaking Methods](./exercises/2026_03_24/) March, 24th
