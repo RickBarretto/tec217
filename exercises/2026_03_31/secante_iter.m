@@ -2,8 +2,8 @@
 
 f = @(x) x^2 - 3*x + exp(x) - 2;
 
-xa = -0.39;
-xn = -0.4;
+xa = -0.39; % xn-1, inicialmente x-1
+xn = -0.4;  % xn, inicialmente x0
 d  = 1e-4;
 N  = 10;
 
