@@ -15,4 +15,4 @@ But you could also run from Matlab or Octave directly.
 - [Implementation Exercise with Matlab/Octave!](./exercises/2026_03_10/) March, 10th
 - [Errors and Approximations](./exercises/2026_03_17/) March, 17th
 - [Function's Zeroes - Breaking Methods](./exercises/2026_03_24/) March, 24th
-- [Function's Zeroes - Optimized Methods](./exercises/2026_03_31/) March, 31st
+- [Function's Zeroes - Open Methods](./exercises/2026_03_31/) March, 31st
