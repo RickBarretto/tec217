@@ -5,7 +5,7 @@ f = @(x) x^2 - 3*x + exp(x) - 2;
 xa = -0.3;
 xn = -0.4;
 d  = 1e-4;
-N  = 11;
+N  = 10;
 
 for n = 1:N
   xn1 = xn - f(xn) * (xn - xa) / (f(xn) - f(xa));
