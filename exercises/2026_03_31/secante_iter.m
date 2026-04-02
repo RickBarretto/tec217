@@ -8,17 +8,17 @@ d  = 1e-4;
 N  = 10;
 
 for n = 1:N
-  xn1 = xn - f(xn) * (xn - xa) / (f(xn) - f(xa))
+  xn1 = xn - f(xn) * (xn - xa) / (f(xn) - f(xa));
 
-  ea = abs((xn1 - xn) / xn1) * 100
+  ea = abs((xn1 - xn) / xn1) * 100;
 
   if ea < d
     printf('Raiz: %.6f | Iteracoes: %d | Erro: %.6f%%\n', xn1, n, ea);
     return
   end
 
-  xa = xn
-  xn = xn1
+  xa = xn;
+  xn = xn1;
 end
 
 printf('Metodo falhou em %d iteracoes.\n', N);
