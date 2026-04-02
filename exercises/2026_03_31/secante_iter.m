@@ -2,7 +2,7 @@
 
 f = @(x) x^2 - 3*x + exp(x) - 2;
 
-xa = -0.3;
+xa = -0.39;
 xn = -0.4;
 d  = 1e-4;
 N  = 10;
@@ -34,3 +34,6 @@ printf('Metodo falhou em %d iteracoes.\n', N);
 % 
 % No caso de x0 = -0.3, x-1 = -0.4:
 % Raiz: -0.390272 | Iteracoes: 4 | Erro: 0.000000%
+%
+% No caso de x0 = -0.39, x-1 = -0.4:
+% Raiz: -0.390272 | Iteracoes: 3 | Erro: 0.000001%
