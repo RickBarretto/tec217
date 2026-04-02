@@ -26,7 +26,7 @@ end
 
 printf('Metodo falhou em %d iteracoes.\n', N);
 
-% Saída esperada
+% Saída:
 %
 % No caso de x0 = -1:
 % Raiz: -0.381864 | Iteracoes: 2 | Erro: 44.821452%
