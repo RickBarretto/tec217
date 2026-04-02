@@ -26,14 +26,14 @@ printf('Metodo falhou em %d iteracoes.\n', N);
 
 % Saída:
 %
-% No caso de x0 = -2, x-1 = 2:
+% No caso de xn = -2, xn-1 = 2:
 % Raiz: 1.446239 | Iteracoes: 9 | Erro: 0.000004%
 %
-% No caso de x0 = -0.2, x-1 = -0.5:
+% No caso de xn = -0.2, xn-1 = -0.5:
 % Raiz: -0.390272 | Iteracoes: 5 | Erro: 0.000000%
 % 
-% No caso de x0 = -0.3, x-1 = -0.4:
+% No caso de xn = -0.3, xn-1 = -0.4:
 % Raiz: -0.390272 | Iteracoes: 4 | Erro: 0.000000%
 %
-% No caso de x0 = -0.39, x-1 = -0.4:
+% No caso de xn = -0.39, xn-1 = -0.4:
 % Raiz: -0.390272 | Iteracoes: 3 | Erro: 0.000001%
