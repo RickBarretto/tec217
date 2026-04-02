@@ -28,8 +28,8 @@ printf('Metodo falhou em %d iteracoes.\n', N);
 
 % Saída esperada
 %
-% No caso de x0 = -1 e N = 2:
+% No caso de x0 = -1:
 % Raiz: -0.381864 | Iteracoes: 2 | Erro: 44.821452%
 %
-% No caso de x0 = -0.5 e N = 2:
+% No caso de x0 = -0.5:
 % Raiz: -0.390550 | Iteracoes: 2 | Erro: 2.405107%
