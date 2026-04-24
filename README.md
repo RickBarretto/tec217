@@ -16,3 +16,4 @@ But you could also run from Matlab or Octave directly.
 - [Errors and Approximations](./exercises/2026_03_17/) March, 17th
 - [Function's Zeroes - Breaking Methods](./exercises/2026_03_24/) March, 24th
 - [Function's Zeroes - Open Methods](./exercises/2026_03_31/) March, 31st
+- [Gauss Elimination](./exercises/2026_04_23/) April, 23rd
