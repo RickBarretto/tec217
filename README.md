@@ -18,3 +18,5 @@ But you could also run from Matlab or Octave directly.
 - [Function's Zeroes - Open Methods](./exercises/2026_03_31/) March, 31st
 - [Gauss Elimination](./exercises/2026_04_23/) April, 23rd
 - [Linear Systems - Iterative Methods](./exercises/2026_05_16/) May, 16th
+- [Interpolation: Newton, Lagrange, Vendermonde](./exercises/2026_05_23/interpolation/) May, 23rd
+- [Linear Regression](./exercises/2026_05_23/linear_regression/) May, 23rd
