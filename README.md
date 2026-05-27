@@ -20,3 +20,4 @@ But you could also run from Matlab or Octave directly.
 - [Linear Systems - Iterative Methods](./exercises/2026_05_16/) May, 16th
 - [Interpolation: Newton, Lagrange, Vendermonde](./exercises/2026_05_23/interpolation/) May, 23rd
 - [Linear Regression](./exercises/2026_05_23/linear_regression/) May, 23rd
+- [Linear and Polinomial Regression](./exercises/2026_05_26/) May, 26th
