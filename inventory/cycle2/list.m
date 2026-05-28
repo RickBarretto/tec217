@@ -36,123 +36,6 @@
 clc; clear; close all;
 
 % =========================================================================
-%                      <<< CONFIGURE AQUI >>>
-%          Descomente O BLOCO do método que deseja executar
-% =========================================================================
-
-
-% ── Q1 — Gauss com Pivoteamento Parcial + Determinante ───────────────────
-%   Sistema:  2x1 - 6x2 - x3 = -38
-%            -3x1 - x2 + 7x3 = -34
-%            -8x1 + x2 - 2x3 = -20
-% A = [ 2 -6 -1;
-%      -3 -1  7;
-%      -8  1 -2];
-% b = [-38; -34; -20];
-% gauss_pivot(A, b);
-
-
-% ── Q2 — Gauss-Jordan (sistema de tanques) ───────────────────────────────
-%   Equações de balanço de massa (estado estacionário):
-%   Tanque 1: 130c1 - 30c2        = 200
-%   Tanque 2: -90c1 + 90c2        = 0
-%   Tanque 3: -40c1 - 60c2 + 120c3 = 500
-%   (Q12=90, Q13=40, Q21=30, Q23=60, Q33=120)
-% A = [130 -30   0;
-%      -90  90   0;
-%      -40 -60 120];
-% b = [200; 0; 500];
-% gauss_jordan(A, b);
-
-
-% ── Q3 — Gauss Sem Pivoteamento (composição de minas) ────────────────────
-%   Mina 1: 52% areia, 30% cf, 18% cg
-%   Mina 2: 20% areia, 50% cf, 30% cg
-%   Mina 3: 25% areia, 20% cf, 55% cg
-%   Necessidade: 4800 m³ areia, 5800 m³ cf, 5700 m³ cg
-% A = [0.52 0.20 0.25;
-%      0.30 0.50 0.20;
-%      0.18 0.30 0.55];
-% b = [4800; 5800; 5700];
-% gauss_simples(A, b);
-
-
-% ── Q4 — Decomposição LU (Doolittle) ─────────────────────────────────────
-%   (a) Sistema original
-%   (b) Vetor alternativo b_alt = [12; 18; -6] reaproveitando L e U
-A = [ 7  2 -3;
-      2  5 -3;
-      1 -1 -6];
-b     = [-12; -20; -26];
-b_alt = [ 12;  18;  -6];
-decomp_lu(A, b, b_alt);    % remove b_alt para resolver só (a)
-
-
-% ── Q5 — Matriz Inversa ──────────────────────────────────────────────────
-%   Sistema:  10x1 + 2x2 - x3 = 27
-%            -3x1 - 6x2 + 2x3 = -61.5
-%             x1 + x2 + 5x3 = -21.5
-% A = [10  2 -1;
-%      -3 -6  2;
-%       1  1  5];
-% matriz_inversa(A);
-
-
-% ── Q6 — Normas da Matriz ────────────────────────────────────────────────
-% A = [ 8  2 -10;
-%      -9  1   3;
-%      15 -1   6];
-% normas_matriz(A);
-
-
-% ── Q7 — Número de Condição (Vandermonde) ────────────────────────────────
-% x1 = 4; x2 = 2; x3 = 7;
-% A = [x1^2 x1 1; x2^2 x2 1; x3^2 x3 1];
-% numero_condicao(A);
-
-
-% ── Q8 — Gauss-Seidel (εs = 5%) ──────────────────────────────────────────
-% A  = [0.8 -0.4  0  ;
-%      -0.4  0.8 -0.4;
-%       0   -0.4  0.8];
-% b  = [41; 25; 105];
-% x0 = zeros(3, 1);
-% tol = 5;          % εs = 5%
-% max_iter = 100;
-% seidel_iter(A, b, x0, tol, max_iter);
-
-
-% ── Q9 — Jacobi (εs = 5%) ────────────────────────────────────────────────
-% A = [10  2 -1;
-%      -3 -6  2;
-%       1  1  5];
-% b = [27; -61.5; -21.5];
-% x0 = zeros(3, 1);
-% tol = 5;
-% max_iter = 100;
-% jacobi_iter(A, b, x0, tol, max_iter);
-
-
-% ── Q10 — SOR com εs = 5% ────────────────────────────────────────────────
-%   Sistema rearanjado para diagonal dominante:
-%     Original:  2x1-6x2-x3=-38, -3x1-x2+7x3=-34, -8x1+x2-2x3=-20
-%     Rearanjado: linha 3 na pos 1, linha 1 na pos 2, linha 2 na pos 3
-%     Verificação diagonal dominante:
-%       |-8| > |1|+|-2| = 3  ✔
-%       |-6| > |2|+|-1| = 3  ✔
-%       | 7| > |-3|+|-1| = 4 ✔
-% A_sor = [-8  1 -2;
-%           2 -6 -1;
-%          -3 -1  7];
-% b_sor = [-20; -38; -34];
-% x0 = zeros(3,1);
-% tol = 5;
-% max_iter = 100;
-% w = 1.25;   % teste: 0.5, 1.0, 1.25, 1.5, 1.75 — escolha o menor nº iterações
-% sor_iter(A_sor, b_sor, x0, w, tol, max_iter);
-
-
-% =========================================================================
 % =========================================================================
 %              IMPLEMENTAÇÕES — não precisa editar abaixo
 % =========================================================================
@@ -941,3 +824,119 @@ end
 function r = iif(cond, a, b)
   if cond, r = a; else, r = b; end
 end
+
+% =========================================================================
+%                      <<< CONFIGURE AQUI >>>
+%          Descomente O BLOCO do método que deseja executar
+% =========================================================================
+
+
+% ── Q1 — Gauss com Pivoteamento Parcial + Determinante ───────────────────
+%   Sistema:  2x1 - 6x2 - x3 = -38
+%            -3x1 - x2 + 7x3 = -34
+%            -8x1 + x2 - 2x3 = -20
+% A = [ 2 -6 -1;
+%      -3 -1  7;
+%      -8  1 -2];
+% b = [-38; -34; -20];
+% gauss_pivot(A, b);
+
+
+% ── Q2 — Gauss-Jordan (sistema de tanques) ───────────────────────────────
+%   Equações de balanço de massa (estado estacionário):
+%   Tanque 1: 130c1 - 30c2        = 200
+%   Tanque 2: -90c1 + 90c2        = 0
+%   Tanque 3: -40c1 - 60c2 + 120c3 = 500
+%   (Q12=90, Q13=40, Q21=30, Q23=60, Q33=120)
+% A = [130 -30   0;
+%      -90  90   0;
+%      -40 -60 120];
+% b = [200; 0; 500];
+% gauss_jordan(A, b);
+
+
+% ── Q3 — Gauss Sem Pivoteamento (composição de minas) ────────────────────
+%   Mina 1: 52% areia, 30% cf, 18% cg
+%   Mina 2: 20% areia, 50% cf, 30% cg
+%   Mina 3: 25% areia, 20% cf, 55% cg
+%   Necessidade: 4800 m³ areia, 5800 m³ cf, 5700 m³ cg
+% A = [0.52 0.20 0.25;
+%      0.30 0.50 0.20;
+%      0.18 0.30 0.55];
+% b = [4800; 5800; 5700];
+% gauss_simples(A, b);
+
+
+% ── Q4 — Decomposição LU (Doolittle) ─────────────────────────────────────
+%   (a) Sistema original
+%   (b) Vetor alternativo b_alt = [12; 18; -6] reaproveitando L e U
+A = [ 7  2 -3;
+      2  5 -3;
+      1 -1 -6];
+b     = [-12; -20; -26];
+b_alt = [ 12;  18;  -6];
+decomp_lu(A, b, b_alt);    % remove b_alt para resolver só (a)
+
+
+% ── Q5 — Matriz Inversa ──────────────────────────────────────────────────
+%   Sistema:  10x1 + 2x2 - x3 = 27
+%            -3x1 - 6x2 + 2x3 = -61.5
+%             x1 + x2 + 5x3 = -21.5
+% A = [10  2 -1;
+%      -3 -6  2;
+%       1  1  5];
+% matriz_inversa(A);
+
+
+% ── Q6 — Normas da Matriz ────────────────────────────────────────────────
+% A = [ 8  2 -10;
+%      -9  1   3;
+%      15 -1   6];
+% normas_matriz(A);
+
+
+% ── Q7 — Número de Condição (Vandermonde) ────────────────────────────────
+% x1 = 4; x2 = 2; x3 = 7;
+% A = [x1^2 x1 1; x2^2 x2 1; x3^2 x3 1];
+% numero_condicao(A);
+
+
+% ── Q8 — Gauss-Seidel (εs = 5%) ──────────────────────────────────────────
+% A  = [0.8 -0.4  0  ;
+%      -0.4  0.8 -0.4;
+%       0   -0.4  0.8];
+% b  = [41; 25; 105];
+% x0 = zeros(3, 1);
+% tol = 5;          % εs = 5%
+% max_iter = 100;
+% seidel_iter(A, b, x0, tol, max_iter);
+
+
+% ── Q9 — Jacobi (εs = 5%) ────────────────────────────────────────────────
+% A = [10  2 -1;
+%      -3 -6  2;
+%       1  1  5];
+% b = [27; -61.5; -21.5];
+% x0 = zeros(3, 1);
+% tol = 5;
+% max_iter = 100;
+% jacobi_iter(A, b, x0, tol, max_iter);
+
+
+% ── Q10 — SOR com εs = 5% ────────────────────────────────────────────────
+%   Sistema rearanjado para diagonal dominante:
+%     Original:  2x1-6x2-x3=-38, -3x1-x2+7x3=-34, -8x1+x2-2x3=-20
+%     Rearanjado: linha 3 na pos 1, linha 1 na pos 2, linha 2 na pos 3
+%     Verificação diagonal dominante:
+%       |-8| > |1|+|-2| = 3  ✔
+%       |-6| > |2|+|-1| = 3  ✔
+%       | 7| > |-3|+|-1| = 4 ✔
+% A_sor = [-8  1 -2;
+%           2 -6 -1;
+%          -3 -1  7];
+% b_sor = [-20; -38; -34];
+% x0 = zeros(3,1);
+% tol = 5;
+% max_iter = 100;
+% w = 1.25;   % teste: 0.5, 1.0, 1.25, 1.5, 1.75 — escolha o menor nº iterações
+% sor_iter(A_sor, b_sor, x0, w, tol, max_iter);
