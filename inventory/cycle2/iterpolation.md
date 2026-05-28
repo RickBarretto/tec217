@@ -4,23 +4,6 @@
 
 ---
 
-## Estrutura do Repositório
-
-```
-interpolation/
-├── main.m          ← único arquivo que você precisa mexer
-├── USAGE.md        ← este guia
-└── methods/        ← funções auxiliares (usadas só se chamadas diretamente)
-    ├── newton.m
-    ├── lagrange.m
-    └── vandermonde.m
-```
-
-> `main.m` é autossuficiente: contém os três métodos como funções locais.  
-> Você não precisa da pasta `methods/` para a prova.
-
----
-
 ## Como Usar na Prova
 
 ### Passo 1 — Configure os dados do enunciado
