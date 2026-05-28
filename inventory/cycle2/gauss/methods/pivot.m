@@ -1,19 +1,19 @@
 function [x, Ab, info] = pivot(A, b, opts)
-%PIVOT Gaussian elimination with partial pivoting.
+%PIVOT Eliminacao de Gauss com pivotamento parcial.
 %   [x, Ab, info] = pivot(A, b, opts)
 %
-% Inputs:
-%   A    : square coefficient matrix (n x n)
-%   b    : right-hand side vector (n x 1)
-%   opts : optional struct
-%          opts.verbose      (default true)
-%          opts.tol          (default 1e-12)
-%          opts.captureSteps (default false)
+% Entradas:
+%   A    : matriz quadrada de coeficientes (n x n)
+%   b    : vetor do lado direito (n x 1)
+%   opts : struct opcional
+%          opts.verbose      (padrao true)
+%          opts.tol          (padrao 1e-12)
+%          opts.captureSteps (padrao false)
 %
-% Outputs:
-%   x    : solution vector
-%   Ab   : final augmented matrix [U | y]
-%   info : diagnostics struct (detA, swaps, steps)
+% Saidas:
+%   x    : vetor solucao
+%   Ab   : matriz aumentada final [U | y]
+%   info : struct de diagnostico (detA, swaps, steps)
 
 if nargin < 3
 	opts = struct();
@@ -40,17 +40,17 @@ end
 Ab = [A, b(:)];
 
 if opts.verbose
-	printf('Augmented matrix [A|b] (initial):\n');
+	printf('Matriz aumentada [A|b] (inicial):\n');
 	print_augmented(Ab);
-	printf('\nElimination (partial pivoting)\n');
+	printf('\nEliminacao (pivotamento parcial)\n');
 end
 
 for k = 1 : n-1
 	if opts.verbose
-		printf('\n--- Step k = %d ---\n', k);
+		printf('\n--- Passo k = %d ---\n', k);
 	end
 
-	% Find max pivot in column k
+	% Busca o maior pivo na coluna k
 	p = k;
 	maxval = abs(Ab(k,k));
 	for i = k+1 : n
@@ -68,7 +68,7 @@ for k = 1 : n-1
 		Ab([k, p], :) = Ab([p, k], :);
 		info.swaps = info.swaps + 1;
 		if opts.verbose
-			printf('  Swap rows %d <-> %d\n', k, p);
+			printf('  Troca de linhas %d <-> %d\n', k, p);
 		end
 	end
 
@@ -93,7 +93,7 @@ for k = 1 : n-1
 end
 
 if opts.verbose
-	printf('\nBack substitution\n');
+	printf('\nSubstituicao retroativa\n');
 end
 
 x = back_substitution(Ab, opts);

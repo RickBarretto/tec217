@@ -1,19 +1,19 @@
 function [x, Ab, info] = ingenuous(A, b, opts)
-%INGENUOUS Gaussian elimination without pivoting.
+%INGENUOUS Eliminacao de Gauss sem pivotamento.
 %   [x, Ab, info] = ingenuous(A, b, opts)
 %
-% Inputs:
-%   A    : square coefficient matrix (n x n)
-%   b    : right-hand side vector (n x 1)
-%   opts : optional struct
-%          opts.verbose      (default true)
-%          opts.tol          (default 1e-12)
-%          opts.captureSteps (default false)
+% Entradas:
+%   A    : matriz quadrada de coeficientes (n x n)
+%   b    : vetor do lado direito (n x 1)
+%   opts : struct opcional
+%          opts.verbose      (padrao true)
+%          opts.tol          (padrao 1e-12)
+%          opts.captureSteps (padrao false)
 %
-% Outputs:
-%   x    : solution vector
-%   Ab   : final augmented matrix [U | y]
-%   info : diagnostics struct (detA, swaps, steps)
+% Saidas:
+%   x    : vetor solucao
+%   Ab   : matriz aumentada final [U | y]
+%   info : struct de diagnostico (detA, swaps, steps)
 
 if nargin < 3
 	opts = struct();
@@ -40,9 +40,9 @@ end
 Ab = [A, b(:)];
 
 if opts.verbose
-	printf('Augmented matrix [A|b] (initial):\n');
+	printf('Matriz aumentada [A|b] (inicial):\n');
 	print_augmented(Ab);
-	printf('\nElimination (no pivoting)\n');
+	printf('\nEliminacao (sem pivotamento)\n');
 end
 
 for k = 1 : n-1
@@ -52,7 +52,7 @@ for k = 1 : n-1
 	end
 
 	if opts.verbose
-		printf('\n--- Step k = %d (pivot = %.6f) ---\n', k, pivot);
+		printf('\n--- Passo k = %d (pivo = %.6f) ---\n', k, pivot);
 	end
 
 	for i = k+1 : n
@@ -75,7 +75,7 @@ for k = 1 : n-1
 end
 
 if opts.verbose
-	printf('\nBack substitution\n');
+	printf('\nSubstituicao retroativa\n');
 end
 
 x = back_substitution(Ab, opts);
