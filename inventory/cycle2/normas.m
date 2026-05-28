@@ -16,56 +16,9 @@
 %
 % =========================================================================
 
-% n1   = norm1_matrix(A);
+A = [10  2 -1;
+     -3 -6  2;
+      1  1  5];
+
+n1   = norm1_matrix(A);
 % ninf = norminf_matrix(A);
-
-% -------------------------------------------------------------------------
-% NORMA 1 DE MATRIZ
-% -------------------------------------------------------------------------
-function n1 = norm1_matrix(A)
-  A = abs(A);
-
-  fprintf('\n');
-  fprintf('╔══════════════════════════════════════════════════╗\n');
-  fprintf('║              NORMA 1 DE MATRIZ                   ║\n');
-  fprintf('╚══════════════════════════════════════════════════╝\n');
-
-  fprintf('\n--- Somando colunas ---\n');
-
-  col_sums = sum(A, 1);
-
-  for j = 1:length(col_sums)
-    fprintf('  Coluna %d → soma = %.6f\n', j, col_sums(j));
-  end
-
-  n1 = max(col_sums);
-
-  fprintf('\n--- Resultado ---\n');
-  fprintf('  ||A||₁ = %.6f\n', n1);
-end
-
-
-% -------------------------------------------------------------------------
-% NORMA INFINITO DE MATRIZ
-% -------------------------------------------------------------------------
-function ninf = norminf_matrix(A)
-  A = abs(A);
-
-  fprintf('\n');
-  fprintf('╔══════════════════════════════════════════════════╗\n');
-  fprintf('║           NORMA INFINITO DE MATRIZ               ║\n');
-  fprintf('╚══════════════════════════════════════════════════╝\n');
-
-  fprintf('\n--- Somando linhas ---\n');
-
-  row_sums = sum(A, 2);
-
-  for i = 1:length(row_sums)
-    fprintf('  Linha %d → soma = %.6f\n', i, row_sums(i));
-  end
-
-  ninf = max(row_sums);
-
-  fprintf('\n--- Resultado ---\n');
-  fprintf('  ||A||∞ = %.6f\n', ninf);
-end
