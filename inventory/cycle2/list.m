@@ -870,12 +870,12 @@ end
 % ── Q4 — Decomposição LU (Doolittle) ─────────────────────────────────────
 %   (a) Sistema original
 %   (b) Vetor alternativo b_alt = [12; 18; -6] reaproveitando L e U
-A = [ 7  2 -3;
-      2  5 -3;
-      1 -1 -6];
-b     = [-12; -20; -26];
-b_alt = [ 12;  18;  -6];
-decomp_lu(A, b, b_alt);    % remove b_alt para resolver só (a)
+% A = [ 7  2 -3;
+%       2  5 -3;
+%       1 -1 -6];
+% b     = [-12; -20; -26];
+% b_alt = [ 12;  18;  -6];
+% decomp_lu(A, b, b_alt);    % remove b_alt para resolver só (a)
 
 
 % ── Q5 — Matriz Inversa ──────────────────────────────────────────────────
