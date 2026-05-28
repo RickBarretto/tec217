@@ -2,7 +2,7 @@
 # 'ingenuo' | 'pivot'
 method = 'ingenuo';
 
-% Example system. Change A and b to test other cases.
+% Sistema de exemplo. Troque A e b para testar outros casos.
 A = [ 10,  2, -1;
       -3, -5,  2;
        1,  1,  6 ];
@@ -22,14 +22,14 @@ switch lower(method)
     error('Unknown method.');
 end
 
-printf('\nFinal solution:\n');
+printf('\nSolucao final:\n');
 for i = 1:length(x)
   printf('  x%d = %12.6f\n', i, x(i));
 end
 
-printf('\nDiagnostics:\n');
+printf('\nDiagnosticos:\n');
 printf('  det(A) = %.6e\n', info.detA);
-printf('  swaps  = %d\n', info.swaps);
+printf('  trocas = %d\n', info.swaps);
 if isfield(info, 'steps')
-  printf('  steps  = %d\n', length(info.steps));
+  printf('  passos = %d\n', length(info.steps));
 end
